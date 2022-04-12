@@ -1,8 +1,16 @@
-// Conteindo del Home
+// Contenido del Home
 
 .home {
 
   .intro {
+
+    img {
+      .img-radius(radius); 
+
+      @media (max-width: @phone) {
+        width: 100%;
+      }
+    }
 
     h2 {
       padding: 15px;
@@ -25,6 +33,16 @@
       border-radius: 20px;
       height: 100%;
     }
+    .tecnologia, .ondas {
+      @media (max-width: @phone) {
+        display: none;
+      }
+    }
+    .auricular {
+      @media (max-width: @phone) {
+        width: 100%;
+      }
+    }
   }
 
   .musica-nueva {
@@ -38,14 +56,18 @@
       margin-top: 13px;
     }
   }
-
   .actual {
     margin-top: 60px;
     border-top: 1px solid @main-border-color;
     padding: 50px 60px;
     display: flex;
     justify-content: center;
-
+    
+    @media (max-width: @phone) {
+      display: flex;
+      columns: reverse;
+      padding: 15px;
+    }
     .actual-text {
       width: 50%;
 
@@ -58,6 +80,7 @@
       }
 
       .btn {
+        .btn-actual();
       }
     }
 

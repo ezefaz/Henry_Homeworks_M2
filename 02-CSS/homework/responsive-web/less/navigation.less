@@ -1,1 +1,17 @@
 // Código de Nav acá
+.menu {
+    .flex(column, center, center);
+    .lista {
+        .flex(row, space-around, center);
+        width: 25%;
+        
+        li {
+            .estilo_nav()
+        }
+        a {
+            text-decoration: none;
+            color: @nav-font;
+            font-weight: bold;
+        }
+    }
+}
