@@ -1,10 +1,10 @@
-(function () {
+// (function () { - primero tenemos que eliminar la sintaxis de funcion autoinvocada.
 
-  window.EventEmitter = EventEmitter;
+  // window.EventEmitter = EventEmitter; - tambien hay que comentar esto. 
 
   // our EventEmitter constructor function
   function EventEmitter () {
-    this.subscribers = {};
+    this.subscribers = {}; 
   }
 
   // To be used like:
@@ -43,4 +43,7 @@
 
   };
 
-})();
+  module.exports = EventEmitter;
+
+
+// })();
