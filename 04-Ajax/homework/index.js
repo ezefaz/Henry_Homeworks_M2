@@ -3,9 +3,8 @@ var URL = `http://localhost:5000/amigos`;
 $('#boton').click(function() {
     $('#lista').empty();
     $.get(`${URL}`, function(friends) { // las comillas invertidas son para que le pueda interpolar variables.
-        console.log(friends);
         friends.forEach(e => {
-            $('#lista').append(`<li id="${e.id}">${e.name} <button id="${e.id}" onclick"deleteFriend(${e.id})">X</button></li>`)
+            $('#lista').append(`<li id="${e.id}">${e.name} X </li>`);
         })
     }) 
 }); 
