@@ -1,13 +1,31 @@
 var URL = `http://localhost:5000/amigos`;
 
 $('#boton').click(function() {
-    $('#lista').empty();
+    let lista = $('#lista');
+    lista.empty();
     $.get(`${URL}`, function(friends) { // las comillas invertidas son para que le pueda interpolar variables.
+        console.log(friends);
         friends.forEach(e => {
             $('#lista').append(`<li id="${e.id}">${e.name} X </li>`);
         })
     }) 
 }); 
+
+/* FETCH
+
+let buttonSearch = document.getElementById("search").addEventListener("click", getFriends);
+let searchBar = document.getElementById("input");
+let amigoSpan = document.getElementById("amigo");
+
+
+function getFriends () {
+    fetch(`${URL}/${searchBar.value}`);
+.then(res => res.json());
+.then(amigo => amigoSpan.innerText = amigo.name);
+
+}
+
+*/
 
 $('#search').click(function() {
 
@@ -15,7 +33,6 @@ $('#search').click(function() {
 
     if(id) {
         $.get(`${URL}/${id}`, function (friend) {
-            console.log(friend);
             $('#amigo').text(`el nombre de mi amigo es: ${friend.name}`);
             $('#input').val("");
         })
@@ -23,6 +40,7 @@ $('#search').click(function() {
     $('#amigo').text('tenes que ingresar un ID');
    }
 });
+
 let deleteFriend = function() {
     let id = $('#inputDelete').val();
     let friend;
@@ -46,3 +64,21 @@ let deleteFriend = function() {
 };
 
 $('#delete').click(deleteFriend);
+
+/* AXIOS
+
+    let deleteInput = document.getElementById('inputDelete')
+    let deleteButton = document.getElementById('delete').addEventListener("click", deleteFriend(id))
+    let span = document.getElementById('success')
+
+
+function deleteFriend(id) {
+    axios.delete(`${URL}/${id}`)
+    .then(res => {
+        span.innerText = "Amigo eliminado exitosamente"
+        deleteInput.value = ""
+    })
+}
+
+
+*/
