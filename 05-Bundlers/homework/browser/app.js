@@ -1,9 +1,8 @@
 // (function () {
 
-  // var whiteboard = window.whiteboard;
+  // var whiteboard = window.whiteboard; 
   var whiteboard = require ('./whiteboard');
   // var socket = window.io(window.location.origin);
-
   var io = require('socket.io-client');
   var socket = io(window.location.origin);
 
